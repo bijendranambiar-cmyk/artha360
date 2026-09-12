@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1f1a"><meta name="description" content="Artha360 personal financial intelligence">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="offline.css">
+  <title>Artha360 · Your financial universe</title>
+</head>
+<body>
+  <aside class="sidebar"><a class="brand" href="#dashboard"><span>✦</span> artha<span>360</span></a>
+    <nav><a class="active" href="#dashboard">Overview</a><a href="#ledger">Ledger</a><a href="#accounts">Accounts</a><a href="#wealth">Wealth</a><a href="#xray">Financial X-Ray</a><a href="#import">Import</a></nav>
+    <div class="sync-state"><i></i><span id="syncLabel">Stored on this device</span></div>
+  </aside>
+  <main>
+    <header><button id="menuToggle" aria-label="Open navigation">☰</button><div><p class="eyebrow">FINANCIAL INTELLIGENCE</p><h1 id="pageTitle">Good evening</h1></div><button class="avatar" aria-label="Profile">BN</button></header>
+    <section id="dashboard" class="view active">
+      <div class="hero"><div><p class="eyebrow">TOTAL NET WORTH</p><h2 id="netWorth">₹0</h2><p id="netWorthChange">Start by adding your first account</p></div><div class="hero-art">⌁</div></div>
+      <div class="metric-grid"><article><p>Liquid cash</p><strong id="cashMetric">₹0</strong><small>Available today</small></article><article><p>Investments</p><strong id="investmentMetric">₹0</strong><small>Long-term growth</small></article><article><p>Total debt</p><strong id="debtMetric">₹0</strong><small>Outstanding liabilities</small></article><article><p>Data health</p><strong id="healthMetric">—</strong><small id="healthDetail">No data yet</small></article></div>
+      <div class="panel split"><div><div class="panel-head"><h3>Net-worth composition</h3><span>This month</span></div><div id="composition" class="composition"><p>Add accounts, assets, or liabilities to see your picture.</p></div></div><div><div class="panel-head"><h3>Recent activity</h3><a href="#ledger">View ledger</a></div><div id="recentActivity" class="activity empty">No transactions yet.</div></div></div>
+    </section>
+    <section id="ledger" class="view"><div class="section-head"><div><p class="eyebrow">UNIVERSAL LEDGER</p><h2>Every money movement</h2></div><button class="primary" data-open="transaction">+ Add transaction</button></div><div class="toolbar"><input id="ledgerSearch" placeholder="Search merchant, note, account"><select id="ledgerType"><option value="">All activity</option><option value="expense">Expenses</option><option value="income">Income</option><option value="transfer">Transfers</option></select></div><div id="ledgerList" class="ledger-list"></div></section>
+    <section id="accounts" class="view"><div class="section-head"><div><p class="eyebrow">SETUP</p><h2>Accounts & cards</h2><p>Balances are stored locally and can be reconciled against statements.</p></div><button class="primary" data-open="account">+ Add account</button></div><div id="accountList" class="card-grid"></div></section>
+    <section id="wealth" class="view"><div class="section-head"><div><p class="eyebrow">BALANCE SHEET</p><h2>Assets & liabilities</h2></div><button class="primary" data-open="asset">+ Add item</button></div><div id="wealthList" class="card-grid"></div></section>
+    <section id="xray" class="view"><div class="section-head"><div><p class="eyebrow">FINANCIAL X-RAY</p><h2>Clarity, not just balances</h2></div></div><div id="xrayContent" class="xray-grid"></div></section>
+    <section id="import" class="view"><div class="section-head"><div><p class="eyebrow">OFFLINE IMPORT</p><h2>Bring your data home</h2><p>Source files stay in your browser; only structured records are created.</p></div></div><div class="panel import-panel"><h3>SMS Backup & Restore XML</h3><p>Import an Android SMS Backup & Restore XML file. Messages are analysed locally for likely financial events; nothing is uploaded.</p><label class="file-drop" for="smsFile"><input id="smsFile" type="file" accept=".xml,text/xml,application/xml"><span>Choose SMS backup XML</span><small>Transactions are staged for review before adding</small></label><div id="importResults"></div></div><div class="panel"><h3>Reconciliation & duplicates</h3><div id="reconciliation"></div></div></section>
+  </main>
+  <dialog id="entryDialog"><form method="dialog" id="entryForm"><div class="dialog-head"><h3 id="dialogTitle">Add account</h3><button value="cancel" class="close">×</button></div><div id="formFields"></div><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="saveEntry" value="default" class="primary">Save locally</button></div></form></dialog>
+  <template id="emptyCard"><article class="empty-card"><span>+</span><p>No items here yet</p></article></template>
+  <script src="app.js"></script>
+</body></html>

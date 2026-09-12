@@ -1,0 +1,2 @@
+/* System fonts keep the app fully usable before any network connection. */
+body{font-family:Arial,Helvetica,sans-serif}.brand,h1,h2,.hero h2,.hero-art{font-family:Georgia,'Times New Roman',serif}.primary,.secondary,.toolbar input,.toolbar select,input,select{font-family:Arial,Helvetica,sans-serif}
