@@ -11,6 +11,7 @@ M1 is an offline-first personal financial intelligence PWA. Open it from a local
 - Bank-statement CSV import with common-header detection, local staging, duplicate checking, transaction categorisation, and individual account assignment.
 - Monthly cash-flow and leading-expense-category insight drawn from the universal ledger.
 - Financial Planning Intelligence: category budgets, savings goals, emergency-fund coverage, a 30-day cash-flow forecast, recurring-payment detection, and category review for uncategorised expense records.
+- Supabase-ready multi-device sync with browser-side AES-GCM encrypted records, user-scoped RLS schema, sign-in, conflict resolution by record timestamp, and encrypted backup export/import. Run `supabase/schema.sql` in your own project and use the in-app Sync & backup page to connect.
 - A service worker and manifest for installable offline use. The `CloudSyncAdapter` is a deliberately transport-neutral queue boundary for a future authenticated encrypted sync service; it does not upload financial data.
 
 ## Run
